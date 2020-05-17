@@ -27,16 +27,17 @@ export default {
       })
         .then((response) => response.text())
         .then((data) => {
-          // Build object from csv. Split on commas and white space, and remove return characters
+          // Build object from csv.
+          // Split on commas and white space, and remove return characters. I
           const csvArray = data.replace(/\r/g, "").split(/,|\n/);
           const csvObject = csvArray.forEach((value, index) => {
             if (index % 2 !== 0) {
               return;
             }
-
+            // Invented custom encoding for commas because CSV will use that as delimiter. Now commas are ';;'
             this.notes.push({
               date: value,
-              message: csvArray[index + 1],
+              message: csvArray[index + 1].replace(/;;/g, ","),
             });
           });
         })

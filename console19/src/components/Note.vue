@@ -19,11 +19,14 @@ export default {
 .note {
   display: inline-block;
   position: relative;
+  vertical-align: top;
 
-  min-width: 100px;
+  width: 200px;
 
   border: 1px solid black;
   padding: 30px 10px 10px 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
 
   background: #e64a92;
 }
@@ -31,7 +34,7 @@ export default {
 .date {
   position: absolute;
   top: 5px;
-  left: 5px;
+  left: 10px;
 }
 
 .message {
