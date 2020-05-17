@@ -1,6 +1,11 @@
 <template>
   <div class="jar">
-    <Note message="Foobar"></Note>
+    <Note
+      v-for="note in notes"
+      :key="note.message"
+      :message="note.message"
+      :date="note.date"
+    ></Note>
   </div>
 </template>
 
@@ -8,6 +13,9 @@
 import Note from "@/components/Note";
 export default {
   name: "Jar",
+  props: {
+    notes: Array,
+  },
   components: { Note },
 };
 </script>
