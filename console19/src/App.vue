@@ -8,4 +8,10 @@
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
+
+body {
+  perspective: 400px;
+  margin: 0;
+  padding: 0;
+}
 </style>
